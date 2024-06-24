@@ -1,6 +1,6 @@
 // scalaVersion := "2.11.6"
 ThisBuild / scalaVersion := "2.12.9"
-ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("14"))
+ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11"))
 
 scalacOptions ++= Seq("-unchecked","-deprecation","-feature")
 

@@ -1,5 +1,6 @@
 // scalaVersion := "2.11.6"
-scalaVersion := "2.12.9"
+ThisBuild / scalaVersion := "2.12.9"
+ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("14"))
 
 scalacOptions ++= Seq("-unchecked","-deprecation","-feature")
 
@@ -12,8 +13,18 @@ libraryDependencies += "nz.ac.waikato.cms.weka" % "weka-dev" % "3.7.12"
 
 libraryDependencies += "com.github.scopt" %% "scopt" % "3.7.0"
 
-resolvers += Resolver.sonatypeRepo("public")
+resolvers ++= Resolver.sonatypeOssRepos("public")
 
-resolvers += Resolver.sonatypeRepo("public")
+lazy val root = (project in file("."))
+  .aggregate(`scalatest-otel-reporter`)
+  .settings(
+    publish / skip := true,
+  )
 
-libraryDependencies += "com.github.scopt" %% "scopt" % "3.2.0"
+  lazy val `scalatest-otel-reporter` = (project in file("scalatest-otel-reporter"))
+  .settings(
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.16" % Provided,
+      "io.opentelemetry" % "opentelemetry-sdk" % "1.30.0" % Provided,
+    ),
+  )

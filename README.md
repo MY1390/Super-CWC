@@ -7,7 +7,7 @@ The greater the threshold is, the looser the feature elimination criterion of LC
 Almost always, in particular when you apply Super-LCC to large datasets, Super-LCC with the threshold zero will return the same outputs as Super-CWC, but is a few times slower than Super-CWW.  On the other hand, with a positive threshold, SUper-LCC will be a few times faster than Super-CWC
 IMPORTANT NOTE.  This program is a trial version.  For this reason, the functions that this program supports are limited.  For example, only Bayesian risk can be used as the selecting measure used by Super-LCC.  Also, this program may include bugs.  If you discover any bugs, please send information to the following adress.  
 kilhoshin314@gmail.com (Kilho Shin, Professor, Gakushuin University)
-IMPORTANT NOTE.  You can use and modify the codes as you like as far as your porpose is for research and you do not distribute the codes.  A detailed license will be presented, when a distributable version of the codes is released
+IMPORTANT NOTE. You can use and modify the codes as you like as far as your porpose is for research and you do not distribute the codes.  A detailed license will be presented, when a distributable version of the codes is released
 
 ## Command Usage
 
